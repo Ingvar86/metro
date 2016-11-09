@@ -4,12 +4,15 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "node server.js"
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cheerio": "^0.22.0",
     "request": "^2.78.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }
