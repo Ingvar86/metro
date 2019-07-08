@@ -45,8 +45,8 @@ function tick() {
 }
 
 function update(array) {
-    $('.time').each(function(i, elem) {
-        elem.innerHTML = array[i];
+        document.querySelectorAll('.time').forEach(function(elem, i) {
+        elem.innerText = array[i];
     });
 }
 

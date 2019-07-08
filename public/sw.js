@@ -1,10 +1,7 @@
-var CACHE_NAME = 'metro-cache-v1';
+var CACHE_NAME = 'metro-cache-v2';
 var urlsToCache = [
     '/',
     '/index.html',
-    '/css/bootstrap.min.css',
-    '/js/jquery.min.js',
-    '/js/bootstrap.min.js',
     '/index.js'
 ];
 
@@ -32,3 +29,16 @@ self.addEventListener('fetch', function(event) {
       )
     );
   });
+
+self.addEventListener('activate', function(event) {
+
+  event.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (CACHE_NAME !== key) {
+          return caches.delete(key);
+        }
+      }));
+    })
+  );
+});

@@ -3,10 +3,7 @@
     <title>Metro DP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="manifest" href="/manifest.json">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
     <style>
     .red {
         color: red;
@@ -14,51 +11,37 @@
     .green {
         color: green;
     }
+    .container {
+        flex-direction: column;
+        display: flex;
+    }
+    .text-center {
+      text-align: center;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+    }
+    h3 {
+        font-size: 24px;
+        font-weight: 500;
+    }
+    body {
+        font-family: sans-serif;
+    }
     </style>
     </head>
     <body>
         
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h1>Вокзальна</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="red time">5:40<h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="green time">5:50<h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="green time">5:50<h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h1>Покровська</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="red time">5:40<h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="green time">5:50<h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-offset-2 col-xs-8 text-center">
-                <h3 class="green time">5:50<h1>
-            </div>
-        </div>        
+    <div class="container text-center">
+        <h1>Вокзальна</h1>
+        <h3 class="red time">5:40</h3>
+        <h3 class="green time">5:50</h3>
+        <h3 class="green time">5:50</h3>
+        <h1>Покровська</h1>
+        <h3 class="red time">5:40</h3>
+        <h3 class="green time">5:50</h3>
+        <h3 class="green time">5:50</h3>       
     </div>
 
     </body>
