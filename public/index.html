@@ -14,46 +14,58 @@
     .container {
         flex-direction: column;
         display: flex;
-        justify-content: center;
-        min-height: 100vh;
+        justify-content: space-evenly;
+        min-height: 650px;
     }
     .text-center {
       text-align: center;
     }
-    h1 {
-        font-size: 36px;
+    .h1 {
+        font-size: 32px;
         font-weight: 500;
     }
-    h3 {
-        font-size: 24px;
+    .h3 {
+        font-size: 20px;
         font-weight: 500;
+    }
+    .label {
+        font-size: 24px;
+    }
+    #checkbox {
+        margin-right: 5px;
     }
     body {
         font-family: sans-serif;
         margin: 0;
     }
     @media (max-height: 650px) {
-        h1{
-            font-size: 32px;
+        .container {
+            min-height: 100vh;
+        }
+        .h1 {
+            font-size: 28px;
         }
 
-        h3 {
-            font-size: 20px;
+        .h3 {
+            font-size: 16px;
         }
     }
     </style>
     </head>
     <body>
         
-    <div class="container text-center">
-        <h1>Вокзальна</h1>
-        <h3 class="red time">5:40</h3>
-        <h3 class="green time">5:50</h3>
-        <h3 class="green time">5:50</h3>
-        <h1>Покровська</h1>
-        <h3 class="red time">5:40</h3>
-        <h3 class="green time">5:50</h3>
-        <h3 class="green time">5:50</h3>       
+    <div class="h3 container text-center">
+        <div class="h1">Вокзальная</div>
+        <div class="red time">5:40</div>
+        <div class="green time">5:50</div>
+        <div class="green time">5:50</div>
+        <div class="h1">Покровская</div>
+        <div class="red time">5:40</div>
+        <div class="green time">5:50</div>
+        <div class="green time">5:50</div>
+        <div>
+            <label onclick='checkBoxClick()'><input id="checkbox" type="checkbox"/><span class="label">выходной</span></label>
+        </div>
     </div>
 
     </body>

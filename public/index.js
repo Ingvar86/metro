@@ -12,7 +12,13 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-window.addEventListener('load', tick);
+window.addEventListener('load', onload);
+
+function onload(){
+    var checkBox = document.getElementById('checkbox');
+    checkBox.checked = JSON.parse(localStorage.getItem('holiday'));
+    refreshTime();
+}
 
 var timeTable = {
     vokzalna:
@@ -27,10 +33,11 @@ var timeTable = {
     }
 }
 
-function tick() {
+function refreshTime() {
     var date = new Date()
     var time = date.toTimeString().split(':').slice(0,2).join(':');
-    var isWork = !(date.getDate() == 6 || date.getDate() == 7);
+    var holiday = localStorage.getItem('holiday');
+    var isWork = !(holiday || date.getDate() == 6 || date.getDate() == 7);
     var vokzal = [];
     var pokrovska = [];
     if (isWork) {
@@ -46,7 +53,7 @@ function tick() {
 
 function update(array) {
         document.querySelectorAll('.time').forEach(function(elem, i) {
-        elem.innerText = array[i];
+        elem.innerText = array[i] || '';
     });
 }
 
@@ -76,6 +83,13 @@ function getTime(array, time) {
     return result
 }
 
-setInterval(tick, 1000*60);
+setInterval(refreshTime, 1000*60);
+
+window.checkBoxClick = function() {
+    var checkBox = document.getElementById('checkbox');
+    localStorage.setItem('holiday', checkBox.checked);
+    refreshTime();
+}
+
 })();
 
