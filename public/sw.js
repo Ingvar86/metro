@@ -1,4 +1,4 @@
-var CACHE_NAME = 'metro-cache-v7';
+var CACHE_NAME = 'metro-cache-v8';
 var urlsToCache = [
     '/',
     '/images/metro-192.png',
