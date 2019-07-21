@@ -37,7 +37,7 @@ function refreshTime() {
     var date = new Date()
     var time = date.toTimeString().split(':').slice(0,2).join(':');
     var holiday = JSON.parse(localStorage.getItem('holiday'));
-    var isWork = !(holiday || date.getDay() == 6 || date.getDay() == 7);
+    var isWork = !(holiday || date.getDay() == 6 || date.getDay() == 0);
     var vokzal = [];
     var pokrovska = [];
     if (isWork) {
