@@ -2,7 +2,7 @@
 
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+        navigator.serviceWorker.register('/sw.js', { updateViaCache: "all" }).then(function(registration) {
         // Registration was successful
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
         }, function(err) {
@@ -114,7 +114,7 @@ function refreshTime() {
     var date = new Date()
     var time = date.toTimeString().split(':').slice(0,2).join(':');
     var toggle = localStorage.getItem('toggle');
-    var isWork = !(date.getDate() == 6 || date.getDate() == 7);
+    var isWork = !(date.getDay() == 6 || date.getDay() == 0);
     var vokzal = [];
     var pokrovska = [];
     if (toggle) {

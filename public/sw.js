@@ -1,8 +1,10 @@
-var CACHE_NAME = 'metro-cache-v5';
+var CACHE_NAME = 'metro-cache-v10';
 var urlsToCache = [
     '/',
+    '/images/metro-192.png',
     '/index.html',
-    '/index.js'
+    '/index.js',
+    '/manifest.json'
 ];
 
 self.addEventListener('install', function(event) {
@@ -20,11 +22,7 @@ self.addEventListener('fetch', function(event) {
     event.respondWith(
       caches.match(event.request)
         .then(function(response) {
-          // Cache hit - return response
-          if (response) {
-            return response;
-          }
-          return fetch(event.request);
+          return response || fetch(event.request);        
         }
       )
     );
