@@ -113,7 +113,7 @@ var timeTable = {
 function refreshTime() {
     var date = new Date()
     var time = date.toTimeString().split(':').slice(0,2).join(':');
-    var toggle = localStorage.getItem('toggle');
+    var toggle = JSON.parse(localStorage.getItem('toggle'));
     var isWork = !(date.getDay() == 6 || date.getDay() == 0);
     var vokzal = [];
     var pokrovska = [];
