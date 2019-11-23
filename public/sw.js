@@ -1,4 +1,4 @@
-var CACHE_NAME = 'metro-cache-v4';
+var CACHE_NAME = 'metro-cache-v5';
 var urlsToCache = [
     '/',
     '/index.html',
